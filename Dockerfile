@@ -11,7 +11,7 @@ RUN go get -d -v
 
 RUN CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -o build/fizzbuzz
 
-FROM scratch
+FROM gcr.io/distroless/static-debian11 
 
 COPY --from=builder /app .
 
